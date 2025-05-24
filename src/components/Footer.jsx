@@ -26,10 +26,13 @@ const Footer = () => (
             Wonderland, USA 12345
           </div>
           <div className="mt-2 text-xs sm:text-sm text-gray-400">
-            Phone: 310-452-5437 <br /> 
-            Email:<a href="mailto:sharon@smartstartschool.com ">sharon@smartstartschool.com </a>
-<br />
-Website: https://smartstartschool.com
+            Phone: 310-452-5437 <br />
+            Email:
+            <a href="mailto:sharon@smartstartschool.com ">
+              sharon@smartstartschool.com{" "}
+            </a>
+            <br />
+            Website: https://smartstartschool.com
           </div>
         </div>
         <div className="flex flex-col items-center md:items-end gap-2">
