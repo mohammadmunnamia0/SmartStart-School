@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const location = useLocation();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -38,9 +39,19 @@ const Navbar = () => {
 
           {/* Desktop menu */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link to="/" className="hover:text-orange-500 font-medium">
+            <NavLink
+              to="/"
+              end
+              className={({ isActive }) =>
+                `font-medium ${
+                  isActive
+                    ? "text-orange-500 underline underline-offset-4"
+                    : "hover:text-orange-500"
+                }`
+              }
+            >
               Home
-            </Link>
+            </NavLink>
             <div className="relative">
               <button
                 onClick={toggleDropdown}
@@ -63,43 +74,85 @@ const Navbar = () => {
               </button>
               {dropdownOpen && (
                 <div className="absolute left-0 mt-2 w-64 bg-white border rounded-lg shadow-lg py-2 z-50">
-                  <Link
+                  <NavLink
                     to="/courses"
-                    className="block px-6 py-2 hover:bg-orange-50 text-gray-700"
+                    className={({ isActive }) =>
+                      `block px-6 py-2 ${
+                        isActive
+                          ? "text-orange-500 underline underline-offset-4"
+                          : "text-gray-700 hover:bg-orange-50"
+                      }`
+                    }
                     onClick={() => setDropdownOpen(false)}
                   >
                     Preschool and Elementary School Programs
-                  </Link>
-                  <Link
+                  </NavLink>
+                  <NavLink
                     to="/speech-therapy"
-                    className="block px-6 py-2 hover:bg-orange-50 text-gray-700"
+                    className={({ isActive }) =>
+                      `block px-6 py-2 ${
+                        isActive
+                          ? "text-orange-500 underline underline-offset-4"
+                          : "text-gray-700 hover:bg-orange-50"
+                      }`
+                    }
                     onClick={() => setDropdownOpen(false)}
                   >
                     Speech Therapy
-                  </Link>
-                  <Link
+                  </NavLink>
+                  <NavLink
                     to="/occupational-therapy"
-                    className="block px-6 py-2 hover:bg-orange-50 text-gray-700"
+                    className={({ isActive }) =>
+                      `block px-6 py-2 ${
+                        isActive
+                          ? "text-orange-500 underline underline-offset-4"
+                          : "text-gray-700 hover:bg-orange-50"
+                      }`
+                    }
                     onClick={() => setDropdownOpen(false)}
                   >
                     Occupational Therapy
-                  </Link>
-                  <Link
+                  </NavLink>
+                  <NavLink
                     to="/developmental-behavior-therapy"
-                    className="block px-6 py-2 hover:bg-orange-50 text-gray-700"
+                    className={({ isActive }) =>
+                      `block px-6 py-2 ${
+                        isActive
+                          ? "text-orange-500 underline underline-offset-4"
+                          : "text-gray-700 hover:bg-orange-50"
+                      }`
+                    }
                     onClick={() => setDropdownOpen(false)}
                   >
                     Developmental Behavior Therapy
-                  </Link>
+                  </NavLink>
                 </div>
               )}
             </div>
-            <Link to="/about" className="hover:text-orange-500 font-medium">
+            <NavLink
+              to="/about"
+              className={({ isActive }) =>
+                `font-medium ${
+                  isActive
+                    ? "text-orange-500 underline underline-offset-4"
+                    : "hover:text-orange-500"
+                }`
+              }
+            >
               About
-            </Link>
-            <Link to="/contact" className="hover:text-orange-500 font-medium">
+            </NavLink>
+            <NavLink
+              to="/contact"
+              className={({ isActive }) =>
+                `font-medium ${
+                  isActive
+                    ? "text-orange-500 underline underline-offset-4"
+                    : "hover:text-orange-500"
+                }`
+              }
+            >
               Contact
-            </Link>
+            </NavLink>
             <Link
               to="/contact"
               className="bg-orange-400 text-white px-4 py-2 rounded-full font-semibold shadow hover:bg-orange-500 transition"
@@ -128,13 +181,20 @@ const Navbar = () => {
       {isMenuOpen && (
         <div className="md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <Link
+            <NavLink
               to="/"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-orange-500 hover:bg-orange-50"
+              end
+              className={({ isActive }) =>
+                `block px-3 py-2 rounded-md text-base font-medium ${
+                  isActive
+                    ? "text-orange-500 underline underline-offset-4"
+                    : "text-gray-700 hover:text-orange-500 hover:bg-orange-50"
+                }`
+              }
               onClick={handleMenuClick}
             >
               Home
-            </Link>
+            </NavLink>
             <div className="relative">
               <button
                 onClick={toggleDropdown}
@@ -144,51 +204,87 @@ const Navbar = () => {
               </button>
               {dropdownOpen && (
                 <div className="pl-4 space-y-1">
-                  <Link
+                  <NavLink
                     to="/courses"
-                    className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-orange-500 hover:bg-orange-50"
+                    className={({ isActive }) =>
+                      `block px-3 py-2 rounded-md text-base font-medium ${
+                        isActive
+                          ? "text-orange-500 underline underline-offset-4"
+                          : "text-gray-700 hover:text-orange-500 hover:bg-orange-50"
+                      }`
+                    }
                     onClick={handleMenuClick}
                   >
                     Preschool and Elementary School Programs
-                  </Link>
-                  <Link
+                  </NavLink>
+                  <NavLink
                     to="/speech-therapy"
-                    className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-orange-500 hover:bg-orange-50"
+                    className={({ isActive }) =>
+                      `block px-3 py-2 rounded-md text-base font-medium ${
+                        isActive
+                          ? "text-orange-500 underline underline-offset-4"
+                          : "text-gray-700 hover:text-orange-500 hover:bg-orange-50"
+                      }`
+                    }
                     onClick={handleMenuClick}
                   >
                     Speech Therapy
-                  </Link>
-                  <Link
+                  </NavLink>
+                  <NavLink
                     to="/occupational-therapy"
-                    className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-orange-500 hover:bg-orange-50"
+                    className={({ isActive }) =>
+                      `block px-3 py-2 rounded-md text-base font-medium ${
+                        isActive
+                          ? "text-orange-500 underline underline-offset-4"
+                          : "text-gray-700 hover:text-orange-500 hover:bg-orange-50"
+                      }`
+                    }
                     onClick={handleMenuClick}
                   >
                     Occupational Therapy
-                  </Link>
-                  <Link
+                  </NavLink>
+                  <NavLink
                     to="/developmental-behavior-therapy"
-                    className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-orange-500 hover:bg-orange-50"
+                    className={({ isActive }) =>
+                      `block px-3 py-2 rounded-md text-base font-medium ${
+                        isActive
+                          ? "text-orange-500 underline underline-offset-4"
+                          : "text-gray-700 hover:text-orange-500 hover:bg-orange-50"
+                      }`
+                    }
                     onClick={handleMenuClick}
                   >
                     Developmental Behavior Therapy
-                  </Link>
+                  </NavLink>
                 </div>
               )}
             </div>
-            <Link
+            <NavLink
               to="/about"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-orange-500 hover:bg-orange-50"
+              className={({ isActive }) =>
+                `block px-3 py-2 rounded-md text-base font-medium ${
+                  isActive
+                    ? "text-orange-500 underline underline-offset-4"
+                    : "text-gray-700 hover:text-orange-500 hover:bg-orange-50"
+                }`
+              }
               onClick={handleMenuClick}
             >
               About
-            </Link>
-            <Link
+            </NavLink>
+            <NavLink
               to="/contact"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-orange-500 hover:bg-orange-50"
+              className={({ isActive }) =>
+                `block px-3 py-2 rounded-md text-base font-medium ${
+                  isActive
+                    ? "text-orange-500 underline underline-offset-4"
+                    : "text-gray-700 hover:text-orange-500 hover:bg-orange-50"
+                }`
+              }
               onClick={handleMenuClick}
             >
               Contact
-            </Link>
+            </NavLink>
             <Link
               to="/contact"
               className="block px-3 py-2 rounded-md text-base font-medium bg-orange-400 text-white hover:bg-orange-500"
