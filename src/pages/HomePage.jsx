@@ -17,7 +17,6 @@ const HomePage = () => {
       <ServicesSection />
       <TherapySection />
       <HowItWorksSection />
-      <GallerySection />
       <ContactSection />
     </div>
   );

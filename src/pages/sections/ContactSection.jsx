@@ -1,8 +1,8 @@
 import React from "react";
 
 const ContactSection = () => (
-  <section className="py-16 px-4">
-    <div className="max-w-xl mx-auto bg-gradient-to-br from-orange-200 to-pink-300 rounded-3xl shadow-xl p-10">
+  <section className="py-16 px-4 mt-28">
+    <div className="max-w-2xl mx-auto bg-gradient-to-br from-orange-200 to-pink-300 rounded-3xl shadow-xl p-4 lg:p-20">
       <h2 className="text-2xl font-bold mb-6 text-center">Let's Get Started</h2>
       <form className="space-y-4">
         <div className="flex gap-4">
