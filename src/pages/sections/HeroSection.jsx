@@ -1,14 +1,15 @@
 import React from "react";
 import placeholder1 from "../../assets/Hero.jpg";
 import placeholder2 from "../../assets/smartstart-logo-side-text-3.png";
-import { PrimaryButton } from "./Buttons";
+import { PrimaryButton2 } from "./Buttons";
+
 
 const HeroSection = () => (
   <section className="px-4 sm:px-6 md:px-8 lg:px-32 py-8 md:py-12 flex flex-col md:flex-row items-center justify-between gap-8">
     <div className="w-full md:max-w-xl text-center md:text-left">
-      <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-gray-800">
-        Unlock Your Child's Potential at
-      </h1>
+      <h1 className="text-xl lg:text-4xl md:text-5xl font-bold mb-4 text-gray-800 bg-orange-400 px-3 py-2 whitespace-nowrap rounded">
+    Unlock Your Child's Potential at
+  </h1>
       <img src={placeholder2} alt="" />
       <p className="text-base sm:text-lg text-gray-700 mb-6">
         Our inclusive preschool and elementary program is designed to nurture
@@ -16,7 +17,7 @@ const HeroSection = () => (
         your child thrive!
       </p>
       <div className="flex justify-center md:justify-start">
-        <PrimaryButton label="Contact Us" />
+        <PrimaryButton2 label="Contact Us" />
       </div>
     </div>
     <div className="w-full md:w-auto">
