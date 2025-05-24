@@ -1,7 +1,14 @@
+import { motion } from "framer-motion";
 import React from "react";
 
 const SpeechTherapyPage = () => (
-  <div className="bg-white">
+  <motion.div
+    className="bg-white"
+    initial={{ opacity: 0, y: 30 }}
+    animate={{ opacity: 1, y: 0 }}
+    exit={{ opacity: 0, y: -30 }}
+    transition={{ duration: 0.5, ease: "easeInOut" }}
+  >
     {/* Hero Section */}
     <section className="bg-gradient-to-r from-indigo-700 to-purple-600 relative overflow-hidden py-20 text-center">
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
@@ -95,7 +102,7 @@ const SpeechTherapyPage = () => (
         </a>
       </div>
     </section>
-  </div>
+  </motion.div>
 );
 
 export default SpeechTherapyPage;

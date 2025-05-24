@@ -1,11 +1,28 @@
+import { motion } from "framer-motion";
 import React from "react";
-import founderImg from "../assets/placeholder3.jpg";
+import founderImg from "../../src/assets/Women.jpg";
 import logo from "../assets/smartstart-logo-side-text-3.png";
+
+const leftAnim = {
+  initial: { opacity: 0, x: -60 },
+  whileInView: { opacity: 1, x: 0 },
+  viewport: { once: true, amount: 0.2 },
+  transition: { duration: 0.8, ease: "easeInOut" },
+};
+const rightAnim = {
+  initial: { opacity: 0, x: 60 },
+  whileInView: { opacity: 1, x: 0 },
+  viewport: { once: true, amount: 0.2 },
+  transition: { duration: 0.8, ease: "easeInOut" },
+};
 
 const AboutPage = () => (
   <div className="bg-white">
     {/* Hero Section */}
-    <section className="bg-purple-700 text-white py-16 text-center">
+    <motion.section
+      {...leftAnim}
+      className="bg-purple-700 text-white py-16 text-center"
+    >
       <img src={logo} alt="SmartStart Logo" className="mx-auto mb-4 w-24" />
       <h1 className="text-5xl font-extrabold mb-4">About Us</h1>
       <p className="max-w-xl mx-auto text-base font-medium">
@@ -13,10 +30,10 @@ const AboutPage = () => (
         child's needs, including Speech, Occupational & Developmental Behavior
         Therapy.
       </p>
-    </section>
+    </motion.section>
 
     {/* Welcome & Story */}
-    <section className="max-w-3xl mx-auto py-12 px-4">
+    <motion.section {...rightAnim} className="max-w-3xl mx-auto py-12 px-4">
       <h2 className="text-3xl font-extrabold text-center mb-6">Welcome</h2>
       <p className="text-center mb-8 text-gray-700">
         SmartStart Believes that all children have the right to develop, to be
@@ -47,10 +64,13 @@ const AboutPage = () => (
         We look forward to getting to know you and partnering in crafting a
         unique learning journey for your child.
       </p>
-    </section>
+    </motion.section>
 
     {/* Founder Section */}
-    <section className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-8 py-12 px-4">
+    <motion.section
+      {...leftAnim}
+      className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-8 py-12 px-4"
+    >
       <div className="flex-1">
         <h3 className="text-xl font-bold mb-2">
           Director and Founder Sharon Lowery, M.A.
@@ -80,10 +100,13 @@ const AboutPage = () => (
           className="rounded-full w-64 h-64 object-cover border-4 border-white shadow-lg"
         />
       </div>
-    </section>
+    </motion.section>
 
     {/* Staff Cards */}
-    <section className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 py-12 px-4">
+    <motion.section
+      {...rightAnim}
+      className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 py-12 px-4"
+    >
       <div className="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center text-center">
         <div className="bg-orange-100 rounded-full p-4 mb-4">
           <svg
@@ -164,10 +187,13 @@ const AboutPage = () => (
           related field.
         </p>
       </div>
-    </section>
+    </motion.section>
 
     {/* Come Visit Us CTA */}
-    <section className="bg-gradient-to-r from-orange-400 to-yellow-300 py-12 rounded-3xl mx-2 md:mx-8 my-12 text-center shadow-lg">
+    <motion.section
+      {...leftAnim}
+      className="bg-gradient-to-r from-orange-400 to-yellow-300 py-12 rounded-3xl mx-2 md:mx-8 my-12 text-center shadow-lg"
+    >
       <h2 className="text-3xl font-extrabold text-white mb-4">Come Visit Us</h2>
       <p className="text-white mb-6">
         Contact us today to schedule a free evaluation and tour. Our dedicated
@@ -179,7 +205,7 @@ const AboutPage = () => (
       >
         Contact Us
       </a>
-    </section>
+    </motion.section>
   </div>
 );
 

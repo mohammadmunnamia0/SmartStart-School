@@ -1,9 +1,19 @@
+import { motion } from "framer-motion";
 import React from "react";
+
+const sectionAnim = {
+  initial: { opacity: 0, x: -60 },
+  whileInView: { opacity: 1, x: 0 },
+  viewport: { once: true, amount: 0.2 },
+  transition: { duration: 0.7, ease: "easeOut" },
+};
 
 const ContactPage = () => (
   <div className="bg-white">
-    {/* Hero Section */}
-    <section className="bg-teal-400 relative overflow-hidden py-16 text-center">
+    <motion.section
+      {...sectionAnim}
+      className="bg-teal-400 relative overflow-hidden py-16 text-center"
+    >
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <svg
           width="900"
@@ -41,10 +51,13 @@ const ContactPage = () => (
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
 
     {/* Form Section */}
-    <section className="relative flex justify-center items-center py-20 px-2 bg-white">
+    <motion.section
+      {...sectionAnim}
+      className="relative flex justify-center items-center py-20 px-2 bg-white"
+    >
       {/* Decorative shapes */}
       <div className="hidden md:block absolute left-0 top-0 w-1/3 h-64 -z-10">
         <svg viewBox="0 0 200 200" className="w-full h-full">
@@ -95,7 +108,7 @@ const ContactPage = () => (
           </button>
         </form>
       </div>
-    </section>
+    </motion.section>
   </div>
 );
 

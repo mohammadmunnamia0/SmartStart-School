@@ -1,9 +1,15 @@
+import { motion } from "framer-motion";
 import React from "react";
 import { Link } from "react-router-dom";
 import logo1 from "../../src/assets/Logo/logo1.png";
 
 const Footer = () => (
-  <footer className="bg-gray-900 text-white py-8 md:py-10 mt-8">
+  <motion.footer
+    className="bg-gray-900 text-white py-8 md:py-10 mt-8"
+    initial={{ y: 50, opacity: 0 }}
+    animate={{ y: 0, opacity: 1 }}
+    transition={{ duration: 0.5, ease: "easeOut" }}
+  >
     <div className="container mx-auto px-4 sm:px-6 lg:px-8">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div className="flex items-center md:items-start gap-2">
@@ -20,7 +26,10 @@ const Footer = () => (
             Wonderland, USA 12345
           </div>
           <div className="mt-2 text-xs sm:text-sm text-gray-400">
-            Phone: (555) 123-4567 | Email: info@smartstart.com
+            Phone: 310-452-5437 <br /> 
+            Email:<a href="mailto:sharon@smartstartschool.com ">sharon@smartstartschool.com </a>
+<br />
+Website: https://smartstartschool.com
           </div>
         </div>
         <div className="flex flex-col items-center md:items-end gap-2">
@@ -44,7 +53,7 @@ const Footer = () => (
         Powered By GenZsoft.cloud
       </div>
     </div>
-  </footer>
+  </motion.footer>
 );
 
 export default Footer;

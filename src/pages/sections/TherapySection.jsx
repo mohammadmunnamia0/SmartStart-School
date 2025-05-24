@@ -5,7 +5,7 @@ import { LuBlocks } from "react-icons/lu";
 import { FaRegFaceGrin } from "react-icons/fa6";
 
 const TherapySection = () => (
-  <section className="py-12 md:py-16 px-4 sm:px-6 md:px-8 bg-gray-50">
+  <section className="py-12 md:py-16 px-4 sm:px-6 md:px-8 ">
      <h2 className="text-2xl sm:text-3xl font-extrabold text-center mb-8 md:mb-10">
         Our Therapy Services
       </h2>

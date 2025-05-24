@@ -1,10 +1,20 @@
+import { motion } from "framer-motion";
 import React from "react";
 import childImg from "../assets/boy1.jpg";
 
+const sectionAnim = {
+  initial: { opacity: 0, y: 40 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, amount: 0.2 },
+  transition: { duration: 0.6, ease: "easeOut" },
+};
+
 const CoursesPage = () => (
   <div className="bg-white">
-    {/* Hero Section */}
-    <section className="bg-pink-400 relative overflow-hidden py-16 text-center">
+    <motion.section
+      {...sectionAnim}
+      className="bg-pink-400 relative overflow-hidden py-16 text-center"
+    >
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <svg
           width="900"
@@ -35,10 +45,12 @@ const CoursesPage = () => (
           APPLY NOW
         </a>
       </div>
-    </section>
+    </motion.section>
 
-    {/* What We Offer Section */}
-    <section className="relative flex flex-col md:flex-row items-center justify-center gap-8 py-16 px-4 bg-white">
+    <motion.section
+      {...sectionAnim}
+      className="relative flex flex-col md:flex-row items-center justify-center gap-8 py-16 px-4 bg-white"
+    >
       <div className="hidden md:block absolute left-0 top-0 w-1/3 h-64 -z-10">
         <svg viewBox="0 0 200 200" className="w-full h-full">
           <polygon points="0,0 200,0 0,200" fill="#4F46E5" opacity="0.7" />
@@ -80,10 +92,9 @@ const CoursesPage = () => (
           APPLY NOW
         </a>
       </div>
-    </section>
+    </motion.section>
 
-    {/* Classes Available Section */}
-    <section className="bg-gray-100 py-16 px-4">
+    <motion.section {...sectionAnim} className="bg-gray-100 py-16 px-4">
       <h2 className="text-3xl font-extrabold text-center mb-2">
         Classes Available
       </h2>
@@ -128,10 +139,9 @@ const CoursesPage = () => (
           teaching and learning with related service providers as needed.
         </p>
       </div>
-    </section>
+    </motion.section>
 
-    {/* Preschool and Elementary Classes Section */}
-    <section className="bg-gray-100 py-12 px-4">
+    <motion.section {...sectionAnim} className="bg-gray-100 py-12 px-4">
       <h2 className="text-2xl font-extrabold text-center mb-6">
         Preschool and Elementary Classes
       </h2>
@@ -157,10 +167,12 @@ const CoursesPage = () => (
           </ul>
         </div>
       </div>
-    </section>
+    </motion.section>
 
-    {/* Come Visit Us CTA */}
-    <section className="bg-gradient-to-r from-orange-300 to-pink-400 py-12 rounded-3xl mx-2 md:mx-8 my-12 text-center shadow-lg">
+    <motion.section
+      {...sectionAnim}
+      className="bg-gradient-to-r from-orange-300 to-pink-400 py-12 rounded-3xl mx-2 md:mx-8 my-12 text-center shadow-lg"
+    >
       <h2 className="text-3xl font-extrabold text-white mb-4">Come Visit Us</h2>
       <p className="text-white mb-6">
         Contact us today to schedule a free evaluation and tour. Our dedicated
@@ -172,7 +184,7 @@ const CoursesPage = () => (
       >
         SCHEDULE A TOUR
       </a>
-    </section>
+    </motion.section>
   </div>
 );
 

@@ -1,8 +1,15 @@
+import { motion } from "framer-motion";
 import React from "react";
 
 const TermsAndConditionsPage = () => (
   <div className="bg-white min-h-screen py-12 px-4">
-    <section className="max-w-3xl mx-auto bg-white rounded-2xl shadow-lg p-8">
+    <motion.section
+      className="max-w-3xl mx-auto bg-white rounded-2xl shadow-lg p-8"
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -30 }}
+      transition={{ duration: 0.5, ease: "easeInOut" }}
+    >
       <h1 className="text-3xl font-extrabold mb-6 text-center">
         Terms & Conditions
       </h1>
@@ -88,7 +95,7 @@ const TermsAndConditionsPage = () => (
       <div className="text-center text-gray-400 text-xs mt-8">
         &copy; {new Date().getFullYear()} SmartStart. All rights reserved.
       </div>
-    </section>
+    </motion.section>
   </div>
 );
 
