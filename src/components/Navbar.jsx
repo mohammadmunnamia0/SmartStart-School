@@ -14,6 +14,11 @@ const Navbar = () => {
     setDropdownOpen(!dropdownOpen);
   };
 
+  const handleMenuClick = () => {
+    setIsMenuOpen(false);
+    setDropdownOpen(false);
+  };
+
   return (
     <nav className="bg-white shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -61,24 +66,28 @@ const Navbar = () => {
                   <Link
                     to="/courses"
                     className="block px-6 py-2 hover:bg-orange-50 text-gray-700"
+                    onClick={() => setDropdownOpen(false)}
                   >
                     Preschool and Elementary School Programs
                   </Link>
                   <Link
                     to="/speech-therapy"
                     className="block px-6 py-2 hover:bg-orange-50 text-gray-700"
+                    onClick={() => setDropdownOpen(false)}
                   >
                     Speech Therapy
                   </Link>
                   <Link
                     to="/occupational-therapy"
                     className="block px-6 py-2 hover:bg-orange-50 text-gray-700"
+                    onClick={() => setDropdownOpen(false)}
                   >
                     Occupational Therapy
                   </Link>
                   <Link
                     to="/developmental-behavior-therapy"
                     className="block px-6 py-2 hover:bg-orange-50 text-gray-700"
+                    onClick={() => setDropdownOpen(false)}
                   >
                     Developmental Behavior Therapy
                   </Link>
@@ -122,7 +131,7 @@ const Navbar = () => {
             <Link
               to="/"
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-orange-500 hover:bg-orange-50"
-              onClick={toggleMenu}
+              onClick={handleMenuClick}
             >
               Home
             </Link>
@@ -138,28 +147,28 @@ const Navbar = () => {
                   <Link
                     to="/courses"
                     className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-orange-500 hover:bg-orange-50"
-                    onClick={toggleMenu}
+                    onClick={handleMenuClick}
                   >
                     Preschool and Elementary School Programs
                   </Link>
                   <Link
                     to="/speech-therapy"
                     className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-orange-500 hover:bg-orange-50"
-                    onClick={toggleMenu}
+                    onClick={handleMenuClick}
                   >
                     Speech Therapy
                   </Link>
                   <Link
                     to="/occupational-therapy"
                     className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-orange-500 hover:bg-orange-50"
-                    onClick={toggleMenu}
+                    onClick={handleMenuClick}
                   >
                     Occupational Therapy
                   </Link>
                   <Link
                     to="/developmental-behavior-therapy"
                     className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-orange-500 hover:bg-orange-50"
-                    onClick={toggleMenu}
+                    onClick={handleMenuClick}
                   >
                     Developmental Behavior Therapy
                   </Link>
@@ -169,21 +178,21 @@ const Navbar = () => {
             <Link
               to="/about"
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-orange-500 hover:bg-orange-50"
-              onClick={toggleMenu}
+              onClick={handleMenuClick}
             >
               About
             </Link>
             <Link
               to="/contact"
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-orange-500 hover:bg-orange-50"
-              onClick={toggleMenu}
+              onClick={handleMenuClick}
             >
               Contact
             </Link>
             <Link
               to="/contact"
               className="block px-3 py-2 rounded-md text-base font-medium bg-orange-400 text-white hover:bg-orange-500"
-              onClick={toggleMenu}
+              onClick={handleMenuClick}
             >
               Contact Us
             </Link>
